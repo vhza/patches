@@ -4,10 +4,10 @@ pushd `dirname $0` > /dev/null
 FullScriptPath=`pwd`
 popd > /dev/null
 
-pacman --noconfirm -Sy
-pacman --noconfirm -S msys/make
-pacman --noconfirm -S diffutils
-pacman --noconfirm -S pkg-config
+pacman --noconfirm -Sy --disable-download-timeout
+pacman --noconfirm -S --disable-download-timeout msys/make
+pacman --noconfirm -S --disable-download-timeout diffutils
+pacman --noconfirm -S --disable-download-timeout pkg-config
 
 export PKG_CONFIG_PATH="$FullExecPath/../local/opus/lib/pkgconfig:$PKG_CONFIG_PATH"
 
